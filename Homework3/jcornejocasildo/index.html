@@ -15,31 +15,99 @@ W3Schools Grid Layout Module (https://www.w3schools.com/css/css_grid.asp )
 </head>
 
 <body>
-	<script src="main.js"></script>
+	<!--<script src="main.js"></script> -->
   
 
   <div class="container">
     <div class="header">
-      <h2>Student Mental Health</h2>
-	  <p> This dashboard explores reported Depression, Anxiety, Panic Attacks, and treatment sought amongst students of different academic years.</p>
+      <h2>Exploring how Mental Health Concerns Vary Across Students' Year of Study </h2>
+      <h3> Diving into the Dashboard</h3>
+      <p> This dashboard explores reported mental-health conditions amongst students such as depression, anxiety, panic attacks, and treatment sought amongst students of different academic years.
+     Throughout their academic careers, students can face high pressure situations when faced with 
+      difficult classes, responsibilities, and navigating one's adult life. Therefore being able to see how many students
+      are impacted by mental health concerns and not receiving professional treatment can allow us to reflect on 
+      how well students are being supported and offered resources during a very important and challenging time in their academic career. 
+    </p>
+
+    <h3> About the Dataset</h3>
+      <p> The data presented in this visualization dashboard was gathered from "Student Mental Health Dataset"
+        which gathered information about university students mental and overall well-being. This data was collected through the use of anonymous surveys,
+        but each survey response included students' self-reported information regarding their gender, year of study, mental health condition, and whether or not they 
+        sought professional help for treatment.
+      
+      </p>
     </div>
 
     <div class="overview">
-		<h3> Overview: Reported Mental Health Conditions Amongst Students</h3>
-	  <p> Number of students who reported each mental health condition or treatment seeking.</p>
-    <div id="overview-chart"></div>
+      <h3>Overview: Mental Health Concerns by Year of Study</h3>
+    
+      <div class="chart-row">
+        <div class="chart-text">
+          <h4>What this graph shows</h4>
+          <p>
+            This bar chart compares the percentage of students in each academic year
+            who reported depression, anxiety, or panic attacks. This helps give us an overview of the distribution of 
+            students from each academic year that reported such conditions.
+          </p>
+          <p>
+            Hovering over each bar shows the exact percentage and number of students
+            represented. Please refer to the legend below the chart to idenitfy the different mental health conditions represented
+            in the chart.
+          </p>
+        </div>
+    
+        <div class="chart-visual">
+          <div id="overview-chart"></div>
+        </div>
+      </div>
     </div>
 
     <div class="focus">
       <h3>Focus: Mental Health Patterns by Academic Year</h3>
-      <p> Percentage of students in each academic year who reported depression, anxiety, panic attacks, or treatment.</p>
-      <div id="focus-chart"></div>
+    
+      <div class="chart-row">
+        <div class="chart-text">
+          <h4>What this graph shows</h4>
+          <p>
+            The heatmap shows how mental health concerns and treatment-seeking vary
+            across academic years.
+          </p>
+          <p>
+            Hovering over each cell will show the exact percentage and the year of the students who reported
+            having that mental meath concern of seeking treatment.
+            Darker cells represent higher percentages of students who answered “Yes”
+            for that category, while lighter colored cells represent a lower percentages of the students who 
+            answered "Yes for that category."
+          </p>
+        </div>
+    
+        <div class="chart-visual">
+          <div id="focus-chart"></div>
+        </div>
+      </div>
     </div>
 
     <div class="advanced">
       <h4>Advanced: Academic Year, Mental Health Concern, and Treatment Seeking</h4>
-      <p> Despite students having a "Mental Health Concern", only a small amount of those students recieved treatment. </p>
-      <div id="advanced-chart"></div>
+    
+      <div class="chart-row">
+        <div class="chart-text">
+          <h4>What this graph shows</h4>
+          <p>
+            The Sankey diagram shows how students from different academic years move, to whether
+            they reported a mental health concern, to whether they sought treatment. Students were reported to have a mental health concern if they reported having one 
+            or more of the mental-health conditions of depression, anxiety, or having experienced panic attacks.
+          </p>
+          <p>
+            As we see the flow from left to right on our diagram we see that a majority of students were found to have a mental health concern
+            but an overwhelming minority of students actuall sought professional treatment. 
+          </p>
+        </div>
+    
+        <div class="chart-visual">
+          <div id="advanced-chart"></div>
+        </div>
+      </div>
     </div>
   </div>
   	<script src="https://d3js.org/d3.v7.min.js"></script>

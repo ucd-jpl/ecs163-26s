@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Calibri, Arial, sans-serif;
-  overflow: hidden;
+  overflow: auto;
 }
 
 svg {
@@ -9,13 +9,18 @@ svg {
   height: auto;
 }
 
+svg text {
+  font-family: Calibri, Arial, sans-serif;
+}
+
+
 .container {
   display: grid;
   grid-template-areas:
     "header header"
     "overview focus"
     "advanced advanced";
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 5px;
   background-color: dodgerblue;
@@ -64,21 +69,17 @@ svg {
   overflow: visible;
 }
 
+#advanced-chart {
+  min-height: 300px;
+  display: block;
+}
 
 #overview-chart svg,
 #focus-chart svg,
 #advanced-chart svg {
   display: block;
   height: auto;
-  overflow: visible;
-}
-
-#advanced-chart svg {
-  max-width: none;
-}
-
-svg text {
-  font-family: Calibri, Arial, sans-serif;
+  overflow: auto;
 }
 
 .chart-note,
@@ -97,4 +98,85 @@ svg text {
       "advanced";
     grid-template-columns: 1fr;
   }
+}
+.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  color: #222;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  max-width: 230px;
+  z-index: 10;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.chart-text {
+  background-color: transparent;
+  border-left: 2px solid #ddd;
+  padding-left: 12px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  max-width: 260px;
+}
+
+.chart-text h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.chart-text p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.chart-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+.advanced .chart-row {
+  display: grid;
+  grid-template-columns: 230px auto;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.advanced .chart-visual {
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.focus .chart-row {
+  grid-template-columns: 230px 1fr;
+  align-items: center;
+}
+
+.focus .chart-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
 }
